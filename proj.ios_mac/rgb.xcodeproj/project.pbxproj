@@ -62,6 +62,12 @@
 		C61BFB2618C5C0D900E127FD /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2318C5C0D900E127FD /* blue.png */; };
 		C61BFB2718C5C0D900E127FD /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2418C5C0D900E127FD /* green.png */; };
 		C61BFB2818C5C0D900E127FD /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2518C5C0D900E127FD /* red.png */; };
+		C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */; };
+		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
+		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		C6F63F9E18C5CEA000E1863E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6F63F9C18C5CEA000E1863E /* InfoPlist.strings */; };
+		C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6F63FA918C5D30C00E1863E /* BallModelTests.mm */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -237,6 +243,13 @@
 			remoteGlobalIDString = A07A4F9F178387730073F6A7;
 			remoteInfo = "CocosDenshion iOS";
 		};
+		C6F63FA218C5CEA000E1863E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6058900D05DD3D006BFB54;
+			remoteInfo = "rgb iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -289,6 +302,14 @@
 		C61BFB2318C5C0D900E127FD /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue.png; sourceTree = "<group>"; };
 		C61BFB2418C5C0D900E127FD /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		C61BFB2518C5C0D900E127FD /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallModel.cpp; sourceTree = "<group>"; };
+		C61BFB2B18C5C3BC00E127FD /* BallModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallModel.h; sourceTree = "<group>"; };
+		C61BFB3218C5C6AC00E127FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
+		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6F63FA118C5CEA000E1863E /* rgbTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rgbTests-Prefix.pch"; sourceTree = "<group>"; };
+		C6F63FA918C5D30C00E1863E /* BallModelTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BallModelTests.mm; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -341,6 +362,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6F63F9218C5CEA000E1863E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */,
+				C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */,
+				C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -375,6 +406,7 @@
 			children = (
 				1D6058910D05DD3D006BFB54 /* rgb iOS.app */,
 				5087E76F17EB910900C73F5D /* rgb Mac.app */,
+				C6F63F9518C5CEA000E1863E /* rgbTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -405,6 +437,7 @@
 			children = (
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
+				C6F63F9918C5CEA000E1863E /* rgbTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				080E96DDFE201D6D7F000001 /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
@@ -432,6 +465,7 @@
 				BF170DB012928DE900B8313A /* OpenGLES.framework */,
 				BF1C47EA1293683800B63C5D /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				C61BFB3218C5C6AC00E127FD /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -496,11 +530,56 @@
 		C61BFB1718C5BBDB00E127FD /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */,
-				C61BFB1F18C5BC1F00E127FD /* GameScene.h */,
+				C61BFB2918C5C35500E127FD /* GameScene */,
 			);
 			name = Scene;
 			path = ../Classes/Scene;
+			sourceTree = "<group>";
+		};
+		C61BFB2918C5C35500E127FD /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */,
+				C61BFB2B18C5C3BC00E127FD /* BallModel.h */,
+				C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */,
+				C61BFB1F18C5BC1F00E127FD /* GameScene.h */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		C6F63F9918C5CEA000E1863E /* rgbTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6F63FA718C5D25C00E1863E /* Scene */,
+				C6F63F9A18C5CEA000E1863E /* Supporting Files */,
+			);
+			path = rgbTests;
+			sourceTree = "<group>";
+		};
+		C6F63F9A18C5CEA000E1863E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */,
+				C6F63F9C18C5CEA000E1863E /* InfoPlist.strings */,
+				C6F63FA118C5CEA000E1863E /* rgbTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6F63FA718C5D25C00E1863E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C6F63FA818C5D26F00E1863E /* GameScene */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		C6F63FA818C5D26F00E1863E /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				C6F63FA918C5D30C00E1863E /* BallModelTests.mm */,
+			);
+			path = GameScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +629,24 @@
 			productReference = 5087E76F17EB910900C73F5D /* rgb Mac.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C6F63F9418C5CEA000E1863E /* rgbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6F63FA418C5CEA000E1863E /* Build configuration list for PBXNativeTarget "rgbTests" */;
+			buildPhases = (
+				C6F63F9118C5CEA000E1863E /* Sources */,
+				C6F63F9218C5CEA000E1863E /* Frameworks */,
+				C6F63F9318C5CEA000E1863E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6F63FA318C5CEA000E1863E /* PBXTargetDependency */,
+			);
+			name = rgbTests;
+			productName = rgbTests;
+			productReference = C6F63F9518C5CEA000E1863E /* rgbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -560,6 +657,9 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = MDDB52YB8L;
+					};
+					C6F63F9418C5CEA000E1863E = {
+						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
 			};
@@ -572,6 +672,7 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -585,6 +686,7 @@
 			targets = (
 				1D6058900D05DD3D006BFB54 /* rgb iOS */,
 				5087E73D17EB910900C73F5D /* rgb Mac */,
+				C6F63F9418C5CEA000E1863E /* rgbTests */,
 			);
 		};
 /* End PBXProject section */
@@ -726,6 +828,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6F63F9318C5CEA000E1863E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F63F9E18C5CEA000E1863E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -735,6 +845,7 @@
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				C61BFB2018C5BC1F00E127FD /* GameScene.cpp in Sources */,
@@ -747,6 +858,14 @@
 			files = (
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F63F9118C5CEA000E1863E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,7 +922,23 @@
 			name = "CocosDenshion iOS";
 			targetProxy = 1AC6FB2C180E99E1004C840B /* PBXContainerItemProxy */;
 		};
+		C6F63FA318C5CEA000E1863E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6058900D05DD3D006BFB54 /* rgb iOS */;
+			targetProxy = C6F63FA218C5CEA000E1863E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C6F63F9C18C5CEA000E1863E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6F63F9D18C5CEA000E1863E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -981,6 +1116,92 @@
 			};
 			name = Release;
 		};
+		C6F63FA518C5CEA000E1863E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rgb iOS.app/rgb iOS";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rgbTests/rgbTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "rgbTests/rgbTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C6F63FA618C5CEA000E1863E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/rgb iOS.app/rgb iOS";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "rgbTests/rgbTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "rgbTests/rgbTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1010,6 +1231,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
+		};
+		C6F63FA418C5CEA000E1863E /* Build configuration list for PBXNativeTarget "rgbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F63FA518C5CEA000E1863E /* Debug */,
+				C6F63FA618C5CEA000E1863E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
