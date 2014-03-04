@@ -1,0 +1,4 @@
+.DS_Store
+proj.ios_mac/*.xcodeproj/*
+!proj.ios_mac/*.xcodeproj/project.pbxproj
+!proj.ios_mac/*.xcworkspace/contents.xcworkspacedata
