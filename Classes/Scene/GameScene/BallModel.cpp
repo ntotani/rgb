@@ -31,6 +31,13 @@ float BallModel::getDy() {
     return dy;
 }
 
-void BallModel::update() {
-    //
+void BallModel::addListener(IBallListener* listener) {
+    listeners.push_back(listener);
+}
+
+void BallModel::update(float tick) {
+    x += dx * tick;
+    y += dy * tick;
+    for (auto it = this->listeners.begin(); it != this->listeners.end(); it++)
+        (*it)->onBallMove(x, y);
 }

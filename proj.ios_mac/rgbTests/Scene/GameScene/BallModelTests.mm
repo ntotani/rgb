@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BallModel.h"
+#import "BallListenerMock.h"
 
 @interface BallModelTests : XCTestCase
 
@@ -31,6 +32,17 @@
 {
     BallModel* ball = new BallModel(BallColor::RED, 0, 0, 0, 0);
     XCTAssertEqual(0.0f, ball->getX());
+}
+
+- (void)testMove
+{
+    BallModel* ball = new BallModel(BallColor::RED, 0, 0, 0, 10);
+    BallListenerMock* listener = new BallListenerMock();
+    ball->addListener(listener);
+    ball->update(1);
+    XCTAssertEqual(10.0f, ball->getY());
+    XCTAssertTrue(listener->isCalled());
+    XCTAssertEqual(10.0f, listener->getY());
 }
 
 @end

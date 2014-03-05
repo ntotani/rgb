@@ -63,6 +63,7 @@
 		C61BFB2718C5C0D900E127FD /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2418C5C0D900E127FD /* green.png */; };
 		C61BFB2818C5C0D900E127FD /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2518C5C0D900E127FD /* red.png */; };
 		C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */; };
+		C62BD68C18C6E37900F1CC34 /* BallListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */; };
 		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
 		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -305,6 +306,9 @@
 		C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallModel.cpp; sourceTree = "<group>"; };
 		C61BFB2B18C5C3BC00E127FD /* BallModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallModel.h; sourceTree = "<group>"; };
 		C61BFB3218C5C6AC00E127FD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C62BD68918C6DDF800F1CC34 /* IBallListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBallListener.h; sourceTree = "<group>"; };
+		C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallListenerMock.cpp; sourceTree = "<group>"; };
+		C62BD68B18C6E37900F1CC34 /* BallListenerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallListenerMock.h; sourceTree = "<group>"; };
 		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
 		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -543,6 +547,7 @@
 				C61BFB2B18C5C3BC00E127FD /* BallModel.h */,
 				C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */,
 				C61BFB1F18C5BC1F00E127FD /* GameScene.h */,
+				C62BD68918C6DDF800F1CC34 /* IBallListener.h */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -577,6 +582,8 @@
 		C6F63FA818C5D26F00E1863E /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
+				C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */,
+				C62BD68B18C6E37900F1CC34 /* BallListenerMock.h */,
 				C6F63FA918C5D30C00E1863E /* BallModelTests.mm */,
 			);
 			path = GameScene;
@@ -865,6 +872,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62BD68C18C6E37900F1CC34 /* BallListenerMock.cpp in Sources */,
 				C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1239,6 +1247,7 @@
 				C6F63FA618C5CEA000E1863E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
