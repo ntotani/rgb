@@ -2,3 +2,6 @@ language: objective-c
 xcode_project: proj.ios_mac/rgb.xcodeproj
 xcode_scheme: 'rgb iOS'
 xcode_sdk: iphonesimulator7.0
+before_install:
+    - brew update
+    - brew upgrade xctool
