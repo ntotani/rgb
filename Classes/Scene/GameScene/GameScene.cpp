@@ -38,14 +38,22 @@ bool GameScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
     
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("red.png");
+    ballModel = new BallModel(BallColor::RED, visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y, 0, 10);
+    ballModel->addListener(this);
     
-    // position the sprite on the center of the screen
-    sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    ball = Sprite::create("red.png");
+    ball->setPosition(Point(ballModel->getX(), ballModel->getY()));
+    this->addChild(ball, 0);
     
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    this->scheduleUpdate();
     
     return true;
+}
+
+void GameScene::update(float tick) {
+    ballModel->update(tick);
+}
+
+void GameScene::onBallMove(float x, float y) {
+    ball->setPosition(x, y);
 }

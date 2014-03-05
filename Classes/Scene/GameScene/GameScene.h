@@ -10,9 +10,13 @@
 #define __rgb__GameScene__
 
 #include "cocos2d.h"
+#include "BallModel.h"
+#include "IBallListener.h"
 
-class GameScene : public cocos2d::Layer
+class GameScene : public cocos2d::Layer, IBallListener
 {
+    BallModel* ballModel;
+    cocos2d::Sprite* ball;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -22,6 +26,9 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameScene);
+
+    void update(float tick);
+    virtual void onBallMove(float x, float y);
 };
 
 #endif /* defined(__rgb__GameScene__) */
