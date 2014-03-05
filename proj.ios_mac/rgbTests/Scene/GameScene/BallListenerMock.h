@@ -12,14 +12,12 @@
 #include "IBallListener.h"
 
 class BallListenerMock : public IBallListener {
+public:
     bool called;
     float lastX;
     float lastY;
-public:
     virtual void onBallMove(float x, float y);
-    bool isCalled();
-    float getX();
-    float getY();
+    virtual void onBallDelete();
 };
 
 #endif /* defined(__rgb__BallListenerMock__) */

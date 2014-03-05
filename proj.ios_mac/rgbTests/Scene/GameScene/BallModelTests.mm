@@ -41,8 +41,8 @@
     ball->addListener(listener);
     ball->update(1);
     XCTAssertEqual(10.0f, ball->getY());
-    XCTAssertTrue(listener->isCalled());
-    XCTAssertEqual(10.0f, listener->getY());
+    XCTAssertTrue(listener->called);
+    XCTAssertEqual(10.0f, listener->lastY);
 }
 
 @end

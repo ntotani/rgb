@@ -14,14 +14,5 @@ void BallListenerMock::onBallMove(float x, float y) {
     lastY = y;
 }
 
-bool BallListenerMock::isCalled() {
-    return called;
-}
-
-float BallListenerMock::getX() {
-    return lastX;
-}
-
-float BallListenerMock::getY() {
-    return lastY;
+void BallListenerMock::onBallDelete() {
 }

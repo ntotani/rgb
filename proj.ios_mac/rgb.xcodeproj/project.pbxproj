@@ -64,6 +64,11 @@
 		C61BFB2818C5C0D900E127FD /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2518C5C0D900E127FD /* red.png */; };
 		C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */; };
 		C62BD68C18C6E37900F1CC34 /* BallListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */; };
+		C62BD68F18C761BD00F1CC34 /* FieldModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */; };
+		C62BD69018C761BD00F1CC34 /* FieldModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */; };
+		C62BD69318C76B9200F1CC34 /* FieldModelTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69218C76B9200F1CC34 /* FieldModelTests.mm */; };
+		C62BD69618C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */; };
+		C62BD69718C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */; };
 		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
 		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -309,6 +314,12 @@
 		C62BD68918C6DDF800F1CC34 /* IBallListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBallListener.h; sourceTree = "<group>"; };
 		C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BallListenerMock.cpp; sourceTree = "<group>"; };
 		C62BD68B18C6E37900F1CC34 /* BallListenerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallListenerMock.h; sourceTree = "<group>"; };
+		C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldModel.cpp; sourceTree = "<group>"; };
+		C62BD68E18C761BD00F1CC34 /* FieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldModel.h; sourceTree = "<group>"; };
+		C62BD69118C7628900F1CC34 /* IFieldListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFieldListener.h; sourceTree = "<group>"; };
+		C62BD69218C76B9200F1CC34 /* FieldModelTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FieldModelTests.mm; sourceTree = "<group>"; };
+		C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldListenerMock.cpp; sourceTree = "<group>"; };
+		C62BD69518C7EAA200F1CC34 /* FieldListenerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldListenerMock.h; sourceTree = "<group>"; };
 		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
 		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -545,9 +556,12 @@
 			children = (
 				C61BFB2A18C5C3BC00E127FD /* BallModel.cpp */,
 				C61BFB2B18C5C3BC00E127FD /* BallModel.h */,
+				C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */,
+				C62BD68E18C761BD00F1CC34 /* FieldModel.h */,
 				C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */,
 				C61BFB1F18C5BC1F00E127FD /* GameScene.h */,
 				C62BD68918C6DDF800F1CC34 /* IBallListener.h */,
+				C62BD69118C7628900F1CC34 /* IFieldListener.h */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -585,6 +599,9 @@
 				C62BD68A18C6E37900F1CC34 /* BallListenerMock.cpp */,
 				C62BD68B18C6E37900F1CC34 /* BallListenerMock.h */,
 				C6F63FA918C5D30C00E1863E /* BallModelTests.mm */,
+				C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */,
+				C62BD69518C7EAA200F1CC34 /* FieldListenerMock.h */,
+				C62BD69218C76B9200F1CC34 /* FieldModelTests.mm */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -852,9 +869,11 @@
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				C62BD69618C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */,
 				C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				C62BD68F18C761BD00F1CC34 /* FieldModel.cpp in Sources */,
 				C61BFB2018C5BC1F00E127FD /* GameScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -872,7 +891,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62BD69318C76B9200F1CC34 /* FieldModelTests.mm in Sources */,
+				C62BD69018C761BD00F1CC34 /* FieldModel.cpp in Sources */,
 				C62BD68C18C6E37900F1CC34 /* BallListenerMock.cpp in Sources */,
+				C62BD69718C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */,
 				C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

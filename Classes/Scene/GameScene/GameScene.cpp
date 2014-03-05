@@ -57,3 +57,6 @@ void GameScene::update(float tick) {
 void GameScene::onBallMove(float x, float y) {
     ball->setPosition(x, y);
 }
+
+void GameScene::onBallDelete() {
+}

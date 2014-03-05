@@ -12,6 +12,7 @@
 class IBallListener {
 public:
     virtual void onBallMove(float x, float y) = 0;
+    virtual void onBallDelete() = 0;
 };
 
 #endif

@@ -29,6 +29,7 @@ public:
 
     void update(float tick);
     virtual void onBallMove(float x, float y);
+    virtual void onBallDelete();
 };
 
 #endif /* defined(__rgb__GameScene__) */
