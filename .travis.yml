@@ -1,4 +1,2 @@
 language: objective-c
-xcode_project: proj.ios_mac/rgb.xcodeproj
-xcode_scheme: 'rgb iOS'
-xcode_sdk: iphonesimulator7.0
+script: "xcodebuild test -project proj.ios_mac/rgb.xcodeproj -scheme 'rgb iOS' -sdk iphonesimulator7.0"
