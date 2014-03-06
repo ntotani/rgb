@@ -29,6 +29,7 @@ public:
     vector<BallModel*> getBalls();
     void addListener(IFieldListener* listener);
     void update(float tick);
+    void touch(float x, float y);
 };
 
 #endif /* defined(__rgb__FieldModel__) */

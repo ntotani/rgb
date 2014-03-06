@@ -45,4 +45,11 @@
     XCTAssertEqual(10.0f, listener->lastY);
 }
 
+- (void)testIntersect
+{
+    BallModel* ball = new BallModel(BallColor::RED, 16, 16, 32, 32, 0, 0);
+    XCTAssertTrue(ball->intersect(16, 16));
+    XCTAssertFalse(ball->intersect(33, 16));
+}
+
 @end

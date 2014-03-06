@@ -79,4 +79,21 @@
     XCTAssertEqual(0, (int)field->getBalls().size());
 }
 
+- (void)testBallTouch
+{
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513);
+    FieldListenerMock* listener = new FieldListenerMock();
+    field->addListener(listener);
+    field->update(3);
+    XCTAssertTrue(listener->createdBall);
+    BallModel* ball = listener->createdBall;
+    BallListenerMock* ballListener = new BallListenerMock();
+    ball->addListener(ballListener);
+    XCTAssertFalse(ballListener->deleteCalled);
+    XCTAssertEqual(1, (int)field->getBalls().size());
+    field->touch(ball->getX(), ball->getY());
+    XCTAssertTrue(ballListener->deleteCalled);
+    XCTAssertEqual(0, (int)field->getBalls().size());
+}
+
 @end

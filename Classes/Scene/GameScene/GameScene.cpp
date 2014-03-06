@@ -77,7 +77,8 @@ void GameScene::onBallCreate(BallModel *ball) {
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {
     Point p = touch->getLocation();
-    log("%f, %f", p.x, p.y);
+    //log("%f, %f", p.x, p.y);
+    field->touch(p.x, p.y);
 }
 
 BallListenerImpl::BallListenerImpl(cocos2d::Sprite* sprite, GameScene* parent):sprite(sprite),parent(parent) {

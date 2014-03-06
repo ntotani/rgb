@@ -54,3 +54,11 @@ void BallModel::deleteFromField() {
     for (auto it = this->listeners.begin(); it != this->listeners.end(); it++)
         (*it)->onBallDelete();
 }
+
+bool BallModel::intersect(float x, float y) {
+    float lx = this->x - wid / 2;
+    float rx = lx + wid;
+    float ty = this->y + hei / 2;
+    float by = ty - hei;
+    return x >= lx && x <= rx && y <= ty && y >= by;
+}

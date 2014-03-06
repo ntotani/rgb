@@ -37,6 +37,7 @@ public:
     void addListener(IBallListener* listener);
     void update(float tick);
     void deleteFromField();
+    bool intersect(float x, float y);
 };
 
 #endif /* defined(__rgb__BallModel__) */

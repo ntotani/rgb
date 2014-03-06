@@ -46,3 +46,16 @@ void FieldModel::update(float tick) {
         }
     }
 }
+
+void FieldModel::touch(float x, float y) {
+    auto it = balls.begin();
+    while (it != balls.end()) {
+        BallModel* ball = *it;
+        if (ball->intersect(x, y)) {
+            it = balls.erase(it);
+            ball->deleteFromField();
+        } else {
+            it++;
+        }
+    }
+}
