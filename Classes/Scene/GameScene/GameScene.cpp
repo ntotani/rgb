@@ -38,7 +38,7 @@ bool GameScene::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
     
-    ballModel = new BallModel(BallColor::RED, visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y, 0, 10);
+    ballModel = new BallModel(BallColor::RED, visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y, 32, 32, 0, 10);
     ballModel->addListener(this);
     
     ball = Sprite::create("red.png");

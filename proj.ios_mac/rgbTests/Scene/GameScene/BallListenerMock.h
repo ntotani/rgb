@@ -14,6 +14,7 @@
 class BallListenerMock : public IBallListener {
 public:
     bool called;
+    bool deleteCalled;
     float lastX;
     float lastY;
     virtual void onBallMove(float x, float y);

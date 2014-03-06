@@ -8,7 +8,7 @@
 
 #include "BallModel.h"
 
-BallModel::BallModel(BallColor color, float x, float y, float dx, float dy):color(color),x(x),y(y),dx(dx),dy(dy) {
+BallModel::BallModel(BallColor color, float x, float y, float wid, float hei, float dx, float dy):color(color),x(x),y(y),wid(wid),hei(hei),dx(dx),dy(dy) {
 }
 
 BallColor BallModel::getColor() {
@@ -21,6 +21,14 @@ float BallModel::getX() {
 
 float BallModel::getY() {
     return y;
+}
+
+float BallModel::getWid() {
+    return wid;
+}
+
+float BallModel::getHei() {
+    return hei;
 }
 
 float BallModel::getDx() {
@@ -40,4 +48,9 @@ void BallModel::update(float tick) {
     y += dy * tick;
     for (auto it = this->listeners.begin(); it != this->listeners.end(); it++)
         (*it)->onBallMove(x, y);
+}
+
+void BallModel::deleteFromField() {
+    for (auto it = this->listeners.begin(); it != this->listeners.end(); it++)
+        (*it)->onBallDelete();
 }

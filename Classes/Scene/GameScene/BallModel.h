@@ -20,18 +20,23 @@ class BallModel {
     BallColor color;
     float x;
     float y;
+    float wid;
+    float hei;
     float dx;
     float dy;
     std::vector<IBallListener*> listeners;
 public:
-    BallModel(BallColor color, float x, float y, float dx, float dy);
+    BallModel(BallColor color, float x, float y, float wid, float hei, float dx, float dy);
     BallColor getColor();
     float getX();
     float getY();
+    float getWid();
+    float getHei();
     float getDx();
     float getDy();
     void addListener(IBallListener* listener);
     void update(float tick);
+    void deleteFromField();
 };
 
 #endif /* defined(__rgb__BallModel__) */

@@ -15,4 +15,5 @@ void BallListenerMock::onBallMove(float x, float y) {
 }
 
 void BallListenerMock::onBallDelete() {
+    deleteCalled = true;
 }

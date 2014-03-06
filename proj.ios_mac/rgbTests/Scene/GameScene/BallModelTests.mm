@@ -30,13 +30,13 @@
 
 - (void)testGetX
 {
-    BallModel* ball = new BallModel(BallColor::RED, 0, 0, 0, 0);
+    BallModel* ball = new BallModel(BallColor::RED, 0, 0, 32, 32, 0, 0);
     XCTAssertEqual(0.0f, ball->getX());
 }
 
 - (void)testMove
 {
-    BallModel* ball = new BallModel(BallColor::RED, 0, 0, 0, 10);
+    BallModel* ball = new BallModel(BallColor::RED, 0, 0, 32, 32, 0, 10);
     BallListenerMock* listener = new BallListenerMock();
     ball->addListener(listener);
     ball->update(1);
