@@ -18,7 +18,7 @@ using namespace std;
 class FieldModel {
     vector<BallModel*> balls;
     vector<IFieldListener*> listeners;
-    float totalTime;
+    float spawnTimer;
     float wid;
     float hei;
     int spawnSpan;

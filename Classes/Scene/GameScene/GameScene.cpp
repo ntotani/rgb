@@ -34,29 +34,32 @@ bool GameScene::init()
     {
         return false;
     }
-    
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    Point origin = Director::getInstance()->getVisibleOrigin();
-    
-    ballModel = new BallModel(BallColor::RED, visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y, 32, 32, 0, 10);
-    ballModel->addListener(this);
-    
-    ball = Sprite::create("red.png");
-    ball->setPosition(Point(ballModel->getX(), ballModel->getY()));
-    this->addChild(ball, 0);
-    
-    this->scheduleUpdate();
-    
+    //Point origin = Director::getInstance()->getVisibleOrigin();
+    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100);
+    field->addListener(this);
+    scheduleUpdate();
     return true;
 }
 
 void GameScene::update(float tick) {
-    ballModel->update(tick);
+    field->update(tick);
 }
 
-void GameScene::onBallMove(float x, float y) {
-    ball->setPosition(x, y);
+void GameScene::onBallCreate(BallModel *ball) {
+    Sprite* sprite = Sprite::create("red.png");
+    sprite->setPosition(Point(ball->getX(), ball->getY()));
+    addChild(sprite);
+    ball->addListener(new BallListenerImpl(sprite, this));
 }
 
-void GameScene::onBallDelete() {
+BallListenerImpl::BallListenerImpl(cocos2d::Sprite* sprite, GameScene* parent):sprite(sprite),parent(parent) {
+}
+
+void BallListenerImpl::onBallMove(float x, float y) {
+    sprite->setPosition(x, y);
+}
+
+void BallListenerImpl::onBallDelete() {
+    parent->removeChild(sprite);
 }

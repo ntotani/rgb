@@ -12,11 +12,12 @@
 #include "cocos2d.h"
 #include "BallModel.h"
 #include "IBallListener.h"
+#include "FieldModel.h"
+#include "IFieldListener.h"
 
-class GameScene : public cocos2d::Layer, IBallListener
+class GameScene : public cocos2d::Layer, IFieldListener
 {
-    BallModel* ballModel;
-    cocos2d::Sprite* ball;
+    FieldModel* field;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
@@ -28,6 +29,15 @@ public:
     CREATE_FUNC(GameScene);
 
     void update(float tick);
+    virtual void onBallCreate(BallModel* ball);
+};
+
+class BallListenerImpl : public IBallListener
+{
+    cocos2d::Sprite* sprite;
+    GameScene* parent;
+public:
+    BallListenerImpl(cocos2d::Sprite* sprite, GameScene* parent);
     virtual void onBallMove(float x, float y);
     virtual void onBallDelete();
 };

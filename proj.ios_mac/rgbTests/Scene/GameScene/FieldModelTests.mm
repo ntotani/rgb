@@ -62,7 +62,7 @@
 
 - (void)testBallDelete
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513);
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -72,7 +72,7 @@
     ball->addListener(ballListener);
     XCTAssertFalse(ballListener->deleteCalled);
     XCTAssertEqual(1, (int)field->getBalls().size());
-    field->update(49);
+    field->update(1);
     XCTAssertTrue(ballListener->deleteCalled);
     XCTAssertEqual(0, (int)field->getBalls().size());
 }
