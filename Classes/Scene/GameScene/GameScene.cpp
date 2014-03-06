@@ -38,6 +38,15 @@ bool GameScene::init()
     //Point origin = Director::getInstance()->getVisibleOrigin();
     field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100);
     field->addListener(this);
+
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = [](Touch* touch, Event* event) { return true; };
+    listener->onTouchMoved = [](Touch* touch, Event* event) {};
+    listener->onTouchEnded = CC_CALLBACK_2(GameScene::onTouchEnded, this);
+    listener->onTouchCancelled = [](Touch* touch, Event* event) {};
+    dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+
     scheduleUpdate();
     return true;
 }
@@ -64,6 +73,11 @@ void GameScene::onBallCreate(BallModel *ball) {
     sprite->setPosition(Point(ball->getX(), ball->getY()));
     addChild(sprite);
     ball->addListener(new BallListenerImpl(sprite, this));
+}
+
+void GameScene::onTouchEnded(Touch* touch, Event* event) {
+    Point p = touch->getLocation();
+    log("%f, %f", p.x, p.y);
 }
 
 BallListenerImpl::BallListenerImpl(cocos2d::Sprite* sprite, GameScene* parent):sprite(sprite),parent(parent) {
