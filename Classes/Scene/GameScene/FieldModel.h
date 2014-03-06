@@ -12,6 +12,7 @@
 #include <vector>
 #include "BallModel.h"
 #include "IFieldListener.h"
+#include "../../Common/IRandom.h"
 
 using namespace std;
 
@@ -26,8 +27,9 @@ class FieldModel {
     float ballDy;
     float restTime;
     float timeLimit;
+    IRandom* random;
 public:
-    FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit);
+    FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random);
     vector<BallModel*> getBalls();
     void addListener(IFieldListener* listener);
     void update(float tick);

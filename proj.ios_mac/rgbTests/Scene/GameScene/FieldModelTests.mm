@@ -10,6 +10,7 @@
 #import "FieldModel.h"
 #import "FieldListenerMock.h"
 #import "BallListenerMock.h"
+#import "../../Common/RandomMock.h"
 
 @interface FieldModelTests : XCTestCase
 
@@ -31,7 +32,7 @@
 
 - (void)testBallCreate
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10, new RandomMock());
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(1);
@@ -48,7 +49,7 @@
 
 - (void)testBallMove
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10, new RandomMock());
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -64,7 +65,7 @@
 
 - (void)testBallDelete
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10, new RandomMock());
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -81,7 +82,7 @@
 
 - (void)testBallTouch
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10, new RandomMock());
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -98,7 +99,7 @@
 
 - (void)testRestTimeUpdate
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10, new RandomMock());
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);

@@ -21,6 +21,7 @@ class GameScene : public cocos2d::Layer, IFieldListener
 {
     FieldModel* field;
     cocos2d::LabelTTF* timerLabel;
+    cocos2d::LabelTTF* scoreLabel;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

@@ -6,13 +6,9 @@
 //
 //
 
-#include <iostream>
-#include <stdio.h>
-#include <time.h>
 #include "FieldModel.h"
 
-FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit):spawnTimer(0),wid(wid),hei(hei),spawnSpan(spawnSpan),ballLen(ballLen),ballDy(ballDy),timeLimit(timeLimit),restTime(timeLimit) {
-    srand((unsigned int)time(NULL));
+FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random):spawnTimer(0),wid(wid),hei(hei),spawnSpan(spawnSpan),ballLen(ballLen),ballDy(ballDy),timeLimit(timeLimit),restTime(timeLimit),random(random) {
 }
 
 vector<BallModel*> FieldModel::getBalls() {
@@ -45,8 +41,8 @@ void FieldModel::update(float tick) {
     spawnTimer += tick;
     if (spawnTimer >= spawnSpan) {
         spawnTimer = 0;
-        float x = rand() % (int)(wid - ballLen) + ballLen / 2;
-        BallModel* ball = new BallModel((BallColor)(rand() % 3), x, hei + ballLen / 2, ballLen, ballLen, 0, ballDy);
+        float x = random->next() % (int)(wid - ballLen) + ballLen / 2;
+        BallModel* ball = new BallModel((BallColor)(random->next() % 3), x, hei + ballLen / 2, ballLen, ballLen, 0, ballDy);
         balls.push_back(ball);
         for (auto it = this->listeners.begin(); it != this->listeners.end(); it++) {
             (*it)->onBallCreate(ball);

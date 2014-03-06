@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "../../Common/RandomImpl.h"
 
 USING_NS_CC;
 
@@ -36,12 +37,18 @@ bool GameScene::init()
     }
     Size visibleSize = Director::getInstance()->getVisibleSize();
     //Point origin = Director::getInstance()->getVisibleOrigin();
-    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, TIME_LIMIT);
+    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, TIME_LIMIT, new RandomImpl());
     field->addListener(this);
 
-    timerLabel = LabelTTF::create(Value(TIME_LIMIT).asString(), "Arial", 48.0f);
-    timerLabel->setPosition(visibleSize.width / 2, visibleSize.height - timerLabel->getContentSize().height / 2);
+    timerLabel = LabelTTF::create(StringUtils::format("TIME:%d.0", TIME_LIMIT), "Arial", 48.0f);
+    Size timerSize = timerLabel->getContentSize();
+    timerLabel->setPosition(visibleSize.width - timerSize.width / 2, visibleSize.height - timerSize.height / 2);
     addChild(timerLabel);
+
+    scoreLabel = LabelTTF::create("SCORE:0", "Arial", 48);
+    Size scoreSize = scoreLabel->getContentSize();
+    scoreLabel->setPosition(scoreSize.width / 2, visibleSize.height - scoreSize.height / 2);
+    addChild(scoreLabel);
 
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     auto listener = EventListenerTouchOneByOne::create();
@@ -80,7 +87,7 @@ void GameScene::onBallCreate(BallModel *ball) {
 }
 
 void GameScene::onRestTimeUpdate(float percent) {
-    timerLabel->setString(Value((int)(TIME_LIMIT * percent)).asString());
+    timerLabel->setString(StringUtils::format("TIME:%.1f", TIME_LIMIT * percent));
 }
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {

@@ -67,8 +67,10 @@
 		C62BD68F18C761BD00F1CC34 /* FieldModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */; };
 		C62BD69018C761BD00F1CC34 /* FieldModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD68D18C761BD00F1CC34 /* FieldModel.cpp */; };
 		C62BD69318C76B9200F1CC34 /* FieldModelTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69218C76B9200F1CC34 /* FieldModelTests.mm */; };
-		C62BD69618C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */; };
 		C62BD69718C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */; };
+		C62BD69F18C8554200F1CC34 /* RandomImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */; };
+		C62BD6A018C8554200F1CC34 /* RandomImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */; };
+		C62BD6A518C8589B00F1CC34 /* RandomMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD6A218C8589B00F1CC34 /* RandomMock.cpp */; };
 		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
 		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -320,6 +322,11 @@
 		C62BD69218C76B9200F1CC34 /* FieldModelTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FieldModelTests.mm; sourceTree = "<group>"; };
 		C62BD69418C7EAA200F1CC34 /* FieldListenerMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FieldListenerMock.cpp; sourceTree = "<group>"; };
 		C62BD69518C7EAA200F1CC34 /* FieldListenerMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldListenerMock.h; sourceTree = "<group>"; };
+		C62BD69C18C8546B00F1CC34 /* IRandom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IRandom.h; sourceTree = "<group>"; };
+		C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomImpl.cpp; sourceTree = "<group>"; };
+		C62BD69E18C8554200F1CC34 /* RandomImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomImpl.h; sourceTree = "<group>"; };
+		C62BD6A218C8589B00F1CC34 /* RandomMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomMock.cpp; sourceTree = "<group>"; };
+		C62BD6A318C8589B00F1CC34 /* RandomMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomMock.h; sourceTree = "<group>"; };
 		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
 		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -410,6 +417,7 @@
 			children = (
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				C62BD69B18C8543E00F1CC34 /* Common */,
 				C61BFB1718C5BBDB00E127FD /* Scene */,
 			);
 			name = Classes;
@@ -566,9 +574,30 @@
 			path = GameScene;
 			sourceTree = "<group>";
 		};
+		C62BD69B18C8543E00F1CC34 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C62BD69C18C8546B00F1CC34 /* IRandom.h */,
+				C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */,
+				C62BD69E18C8554200F1CC34 /* RandomImpl.h */,
+			);
+			name = Common;
+			path = ../Classes/Common;
+			sourceTree = "<group>";
+		};
+		C62BD6A118C8586B00F1CC34 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C62BD6A218C8589B00F1CC34 /* RandomMock.cpp */,
+				C62BD6A318C8589B00F1CC34 /* RandomMock.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		C6F63F9918C5CEA000E1863E /* rgbTests */ = {
 			isa = PBXGroup;
 			children = (
+				C62BD6A118C8586B00F1CC34 /* Common */,
 				C6F63FA718C5D25C00E1863E /* Scene */,
 				C6F63F9A18C5CEA000E1863E /* Supporting Files */,
 			);
@@ -869,10 +898,10 @@
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				C62BD69618C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */,
 				C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				C62BD69F18C8554200F1CC34 /* RandomImpl.cpp in Sources */,
 				C62BD68F18C761BD00F1CC34 /* FieldModel.cpp in Sources */,
 				C61BFB2018C5BC1F00E127FD /* GameScene.cpp in Sources */,
 			);
@@ -891,10 +920,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62BD6A018C8554200F1CC34 /* RandomImpl.cpp in Sources */,
 				C62BD69318C76B9200F1CC34 /* FieldModelTests.mm in Sources */,
 				C62BD69018C761BD00F1CC34 /* FieldModel.cpp in Sources */,
 				C62BD68C18C6E37900F1CC34 /* BallListenerMock.cpp in Sources */,
 				C62BD69718C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */,
+				C62BD6A518C8589B00F1CC34 /* RandomMock.cpp in Sources */,
 				C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
