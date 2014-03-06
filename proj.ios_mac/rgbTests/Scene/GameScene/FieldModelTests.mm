@@ -122,13 +122,13 @@
     XCTAssertEqual(400.0f, field->getBalls()[0]->getY());
     field->touch(16, 400);
     XCTAssertEqual(3, (int)field->getBalls().size());
-    XCTAssertEqual(0, listener->score);
+    XCTAssertEqual(1, listener->score);
     field->touch(16, 432);
     XCTAssertEqual(2, (int)field->getBalls().size());
-    XCTAssertEqual(0, listener->score);
+    XCTAssertEqual(2, listener->score);
     field->touch(16, 464);
     XCTAssertEqual(1, (int)field->getBalls().size());
-    XCTAssertEqual(1, listener->score);
+    XCTAssertEqual(3, listener->score);
 }
 
 - (void)testNotScored
@@ -145,14 +145,14 @@
     XCTAssertEqual(4, (int)field->getBalls().size());
     field->touch(16, 400);
     XCTAssertEqual(3, (int)field->getBalls().size());
-    XCTAssertEqual(0, listener->score);
+    XCTAssertEqual(1, listener->score);
     field->touch(16, 432);
     XCTAssertEqual(2, (int)field->getBalls().size());
-    XCTAssertEqual(0, listener->score);
+    XCTAssertEqual(2, listener->score);
     field->touch(16, 464);
     // cant get score for invalid color touch
     XCTAssertEqual(2, (int)field->getBalls().size());
-    XCTAssertEqual(0, listener->score);
+    XCTAssertEqual(2, listener->score);
 }
 
 @end

@@ -71,6 +71,11 @@
 		C62BD69F18C8554200F1CC34 /* RandomImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */; };
 		C62BD6A018C8554200F1CC34 /* RandomImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD69D18C8554200F1CC34 /* RandomImpl.cpp */; };
 		C62BD6A518C8589B00F1CC34 /* RandomMock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD6A218C8589B00F1CC34 /* RandomMock.cpp */; };
+		C62BD6AB18C8740C00F1CC34 /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD6A918C8740C00F1CC34 /* TitleScene.cpp */; };
+		C62BD6AC18C8740C00F1CC34 /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD6A918C8740C00F1CC34 /* TitleScene.cpp */; };
+		C62BD71C18C87DF600F1CC34 /* clickme-down.png in Resources */ = {isa = PBXBuildFile; fileRef = C62BD71A18C87DF600F1CC34 /* clickme-down.png */; };
+		C62BD71D18C87DF600F1CC34 /* clickme.png in Resources */ = {isa = PBXBuildFile; fileRef = C62BD71B18C87DF600F1CC34 /* clickme.png */; };
+		C62BD72118C88B4300F1CC34 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = C62BD72018C88B4300F1CC34 /* MainScene.ccbi */; };
 		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
 		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -327,6 +332,11 @@
 		C62BD69E18C8554200F1CC34 /* RandomImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomImpl.h; sourceTree = "<group>"; };
 		C62BD6A218C8589B00F1CC34 /* RandomMock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RandomMock.cpp; sourceTree = "<group>"; };
 		C62BD6A318C8589B00F1CC34 /* RandomMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomMock.h; sourceTree = "<group>"; };
+		C62BD6A918C8740C00F1CC34 /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
+		C62BD6AA18C8740C00F1CC34 /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
+		C62BD71A18C87DF600F1CC34 /* clickme-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clickme-down.png"; sourceTree = "<group>"; };
+		C62BD71B18C87DF600F1CC34 /* clickme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickme.png; sourceTree = "<group>"; };
+		C62BD72018C88B4300F1CC34 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
 		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -543,7 +553,10 @@
 			children = (
 				C61BFB2318C5C0D900E127FD /* blue.png */,
 				C61BFB2118C5BE1300E127FD /* chara1.png */,
+				C62BD71A18C87DF600F1CC34 /* clickme-down.png */,
+				C62BD71B18C87DF600F1CC34 /* clickme.png */,
 				C61BFB2418C5C0D900E127FD /* green.png */,
+				C62BD72018C88B4300F1CC34 /* MainScene.ccbi */,
 				C61BFB2518C5C0D900E127FD /* red.png */,
 			);
 			name = Resources;
@@ -554,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				C61BFB2918C5C35500E127FD /* GameScene */,
+				C62BD6A818C873D700F1CC34 /* TitleScene */,
 			);
 			name = Scene;
 			path = ../Classes/Scene;
@@ -592,6 +606,15 @@
 				C62BD6A318C8589B00F1CC34 /* RandomMock.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		C62BD6A818C873D700F1CC34 /* TitleScene */ = {
+			isa = PBXGroup;
+			children = (
+				C62BD6A918C8740C00F1CC34 /* TitleScene.cpp */,
+				C62BD6AA18C8740C00F1CC34 /* TitleScene.h */,
+			);
+			path = TitleScene;
 			sourceTree = "<group>";
 		};
 		C6F63F9918C5CEA000E1863E /* rgbTests */ = {
@@ -850,16 +873,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C62BD72118C88B4300F1CC34 /* MainScene.ccbi in Resources */,
 				C61BFB2718C5C0D900E127FD /* green.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				C62BD71C18C87DF600F1CC34 /* clickme-down.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				C61BFB2218C5BE1300E127FD /* chara1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				C62BD71D18C87DF600F1CC34 /* clickme.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				C61BFB2618C5C0D900E127FD /* blue.png in Resources */,
@@ -898,6 +924,7 @@
 			files = (
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				C62BD6AB18C8740C00F1CC34 /* TitleScene.cpp in Sources */,
 				C61BFB2C18C5C3BC00E127FD /* BallModel.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -927,6 +954,7 @@
 				C62BD69718C7EAA200F1CC34 /* FieldListenerMock.cpp in Sources */,
 				C62BD6A518C8589B00F1CC34 /* RandomMock.cpp in Sources */,
 				C6F63FAA18C5D30C00E1863E /* BallModelTests.mm in Sources */,
+				C62BD6AC18C8740C00F1CC34 /* TitleScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,6 +1234,10 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					USE_FILE32API,
+					CC_TARGET_OS_IPHONE,
+					"COCOS2D_DEBUG=1",
+					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1213,6 +1245,24 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../cocos2d",
+					"$(SRCROOT)/../cocos2d/cocos",
+					"$(SRCROOT)/../cocos2d/cocos/base",
+					"$(SRCROOT)/../cocos2d/cocos/physics",
+					"$(SRCROOT)/../cocos2d/cocos/math/kazmath/include",
+					"$(SRCROOT)/../cocos2d/cocos/2d",
+					"$(SRCROOT)/../cocos2d/cocos/gui",
+					"$(SRCROOT)/../cocos2d/cocos/network",
+					"$(SRCROOT)/../cocos2d/cocos/audio/include",
+					"$(SRCROOT)/../cocos2d/cocos/editor-support",
+					"$(SRCROOT)/../cocos2d/extensions",
+					"$(SRCROOT)/../cocos2d/external",
+					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					"$(inherited)",
+					"$(SRCROOT)/../cocos2d/cocos/2d/platform/ios",
+					"$(SRCROOT)/../cocos2d/cocos/2d/platform/ios/Simulation",
+				);
 				INFOPLIST_FILE = "rgbTests/rgbTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1249,11 +1299,34 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "rgbTests/rgbTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					USE_FILE32API,
+					CC_TARGET_OS_IPHONE,
+					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../cocos2d",
+					"$(SRCROOT)/../cocos2d/cocos",
+					"$(SRCROOT)/../cocos2d/cocos/base",
+					"$(SRCROOT)/../cocos2d/cocos/physics",
+					"$(SRCROOT)/../cocos2d/cocos/math/kazmath/include",
+					"$(SRCROOT)/../cocos2d/cocos/2d",
+					"$(SRCROOT)/../cocos2d/cocos/gui",
+					"$(SRCROOT)/../cocos2d/cocos/network",
+					"$(SRCROOT)/../cocos2d/cocos/audio/include",
+					"$(SRCROOT)/../cocos2d/cocos/editor-support",
+					"$(SRCROOT)/../cocos2d/extensions",
+					"$(SRCROOT)/../cocos2d/external",
+					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
+					"$(inherited)",
+					"$(SRCROOT)/../cocos2d/cocos/2d/platform/ios",
+					"$(SRCROOT)/../cocos2d/cocos/2d/platform/ios/Simulation",
+				);
 				INFOPLIST_FILE = "rgbTests/rgbTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

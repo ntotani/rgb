@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
-#include "Scene/GameScene/GameScene.h"
+#include "Scene/TitleScene/TitleScene.h"
+#include "cocosbuilder/CCNodeLoaderLibrary.h"
 
 USING_NS_CC;
 
@@ -24,8 +25,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
-    auto scene = GameScene::createScene();
+    NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();
+    nodeLoaderLibrary->registerNodeLoader("TitleScenee", TitleSceneLoader::loader());
+    CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
+    ccbReader->autorelease();
+    Node* layer = ccbReader->readNodeGraphFromFile("MainScene.ccbi");
+    //node->setPosition( ccp(size.width/2, size.height/2) );
+
+    auto scene = Scene::create();
+    scene->addChild(layer);
 
     // run
     director->runWithScene(scene);
