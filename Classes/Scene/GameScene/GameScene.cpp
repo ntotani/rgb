@@ -36,7 +36,7 @@ bool GameScene::init()
     }
     Size visibleSize = Director::getInstance()->getVisibleSize();
     //Point origin = Director::getInstance()->getVisibleOrigin();
-    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100);
+    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, 10);
     field->addListener(this);
 
     auto dispatcher = Director::getInstance()->getEventDispatcher();
@@ -73,6 +73,10 @@ void GameScene::onBallCreate(BallModel *ball) {
     sprite->setPosition(Point(ball->getX(), ball->getY()));
     addChild(sprite);
     ball->addListener(new BallListenerImpl(sprite, this));
+}
+
+void GameScene::onRestTimeUpdate(float percent) {
+    //
 }
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {

@@ -30,6 +30,7 @@ public:
 
     void update(float tick);
     virtual void onBallCreate(BallModel* ball);
+    virtual void onRestTimeUpdate(float percent);
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
 };
 

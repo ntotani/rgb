@@ -11,7 +11,7 @@
 #include <time.h>
 #include "FieldModel.h"
 
-FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy):spawnTimer(0),wid(wid),hei(hei),spawnSpan(spawnSpan),ballLen(ballLen),ballDy(ballDy) {
+FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit):spawnTimer(0),wid(wid),hei(hei),spawnSpan(spawnSpan),ballLen(ballLen),ballDy(ballDy),timeLimit(timeLimit),restTime(timeLimit) {
     srand((unsigned int)time(NULL));
 }
 
@@ -24,7 +24,13 @@ void FieldModel::addListener(IFieldListener* listener) {
 }
 
 void FieldModel::update(float tick) {
-    spawnTimer += tick;
+    restTime -= tick;
+    for (auto it = this->listeners.begin(); it != this->listeners.end(); it++) {
+        (*it)->onRestTimeUpdate(restTime / timeLimit);
+    }
+    if (restTime <= 0) {
+        return;
+    }
     auto it = balls.begin();
     while (it != balls.end()) {
         BallModel* ball = *it;
@@ -36,6 +42,7 @@ void FieldModel::update(float tick) {
             it++;
         }
     }
+    spawnTimer += tick;
     if (spawnTimer >= spawnSpan) {
         spawnTimer = 0;
         float x = rand() % (int)(wid - ballLen) + ballLen / 2;

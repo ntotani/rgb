@@ -31,7 +31,7 @@
 
 - (void)testBallCreate
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10);
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(1);
@@ -48,7 +48,7 @@
 
 - (void)testBallMove
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -10);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -10, 10);
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -64,7 +64,7 @@
 
 - (void)testBallDelete
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -513);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -81,7 +81,7 @@
 
 - (void)testBallTouch
 {
-    FieldModel* field = new FieldModel(640, 480, 3, 32, -513);
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
     FieldListenerMock* listener = new FieldListenerMock();
     field->addListener(listener);
     field->update(3);
@@ -94,6 +94,15 @@
     field->touch(ball->getX(), ball->getY());
     XCTAssertTrue(ballListener->deleteCalled);
     XCTAssertEqual(0, (int)field->getBalls().size());
+}
+
+- (void)testRestTimeUpdate
+{
+    FieldModel* field = new FieldModel(640, 480, 3, 32, -513, 10);
+    FieldListenerMock* listener = new FieldListenerMock();
+    field->addListener(listener);
+    field->update(3);
+    XCTAssertEqual(0.7f, listener->percent);
 }
 
 @end

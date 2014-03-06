@@ -24,8 +24,10 @@ class FieldModel {
     int spawnSpan;
     float ballLen;
     float ballDy;
+    float restTime;
+    float timeLimit;
 public:
-    FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy);
+    FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit);
     vector<BallModel*> getBalls();
     void addListener(IFieldListener* listener);
     void update(float tick);

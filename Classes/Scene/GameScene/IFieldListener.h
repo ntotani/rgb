@@ -14,6 +14,7 @@
 class IFieldListener {
 public:
     virtual void onBallCreate(BallModel* ball) = 0;
+    virtual void onRestTimeUpdate(float percent) = 0;
 };
 
 #endif

@@ -15,3 +15,7 @@ void FieldListenerMock::onBallCreate(BallModel* ball) {
     called = true;
     createdBall = ball;
 }
+
+void FieldListenerMock::onRestTimeUpdate(float percent) {
+    this->percent = percent;
+}
