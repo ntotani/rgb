@@ -42,6 +42,8 @@
     XCTAssertEqual(1, (int)field->getBalls().size());
     XCTAssertTrue(listener->called);
     XCTAssertTrue(listener->createdBall);
+    field->update(0.1f);
+    XCTAssertEqual(1, (int)field->getBalls().size());
 }
 
 - (void)testBallMove
