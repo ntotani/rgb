@@ -47,7 +47,20 @@ void GameScene::update(float tick) {
 }
 
 void GameScene::onBallCreate(BallModel *ball) {
-    Sprite* sprite = Sprite::create("red.png");
+    Sprite* sprite = NULL;
+    switch (ball->getColor()) {
+        case RED:
+            sprite = Sprite::create("red.png");
+            break;
+        case GREEN:
+            sprite = Sprite::create("green.png");
+            break;
+        case BLUE:
+            sprite = Sprite::create("blue.png");
+            break;
+        default:
+            break;
+    }
     sprite->setPosition(Point(ball->getX(), ball->getY()));
     addChild(sprite);
     ball->addListener(new BallListenerImpl(sprite, this));

@@ -39,7 +39,7 @@ void FieldModel::update(float tick) {
     if (spawnTimer >= spawnSpan) {
         spawnTimer = 0;
         float x = rand() % (int)(wid - ballLen) + ballLen / 2;
-        BallModel* ball = new BallModel(BallColor::RED, x, hei + ballLen / 2, ballLen, ballLen, 0, ballDy);
+        BallModel* ball = new BallModel((BallColor)(rand() % 3), x, hei + ballLen / 2, ballLen, ballLen, 0, ballDy);
         balls.push_back(ball);
         for (auto it = this->listeners.begin(); it != this->listeners.end(); it++) {
             (*it)->onBallCreate(ball);
