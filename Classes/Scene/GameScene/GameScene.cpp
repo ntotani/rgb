@@ -91,7 +91,7 @@ void GameScene::onRestTimeUpdate(float percent) {
 }
 
 void GameScene::onScore(int score) {
-    //
+    scoreLabel->setString(StringUtils::format("SCORE:%d", score));
 }
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {

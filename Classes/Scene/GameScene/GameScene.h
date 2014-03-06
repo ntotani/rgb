@@ -15,7 +15,7 @@
 #include "FieldModel.h"
 #include "IFieldListener.h"
 
-#define TIME_LIMIT 10
+#define TIME_LIMIT 100
 
 class GameScene : public cocos2d::Layer, IFieldListener
 {

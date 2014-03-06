@@ -69,15 +69,14 @@ void FieldModel::touch(float x, float y) {
         if (ball->intersect(x, y) && ball->getColor() == currentTarget) {
             it = balls.erase(it);
             ball->deleteFromField();
+            score++;
+            for (auto jt = this->listeners.begin(); jt != this->listeners.end(); jt++) {
+                (*jt)->onScore(score);
+            }
             switch(currentTarget) {
                 case RED: currentTarget = GREEN; break;
                 case GREEN: currentTarget = BLUE; break;
-                case BLUE:
-                    currentTarget = RED;
-                    score++;
-                    for (auto jt = this->listeners.begin(); jt != this->listeners.end(); jt++) {
-                        (*jt)->onScore(score);
-                    }
+                case BLUE: currentTarget = RED;
             }
         } else {
             it++;
