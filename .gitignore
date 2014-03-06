@@ -3,3 +3,4 @@ proj.ios_mac/*.xcodeproj/*
 !proj.ios_mac/*.xcodeproj/project.pbxproj
 !proj.ios_mac/*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 !proj.ios_mac/*.xcodeproj/xcshareddata
+cocosbuilder/Published-iOS

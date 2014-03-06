@@ -7,6 +7,8 @@
 //
 
 #include "TitleScene.h"
+#include "../GameScene/GameScene.h"
+#include "cocosbuilder/CCNodeLoaderLibrary.h"
 
 USING_NS_CC;
 using namespace cocosbuilder;
@@ -16,8 +18,11 @@ Scene* TitleScene::createScene()
     // 'scene' is an autorelease object
     auto scene = Scene::create();
 
-    // 'layer' is an autorelease object
-    auto layer = TitleScene::create();
+    NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();
+    nodeLoaderLibrary->registerNodeLoader("TitleScene", TitleSceneLoader::loader());
+    CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
+    ccbReader->autorelease();
+    Node* layer = ccbReader->readNodeGraphFromFile("TitleScene.ccbi");
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -43,7 +48,7 @@ void TitleScene::onTouchEnded(Touch* touch, Event* event) {
 }
 
 void TitleScene::onButtonPressed(Object* sender) {
-    log("tap");
+    Director::getInstance()->replaceScene(TransitionFade::create(1.0f, GameScene::createScene()));
 }
 
 SEL_MenuHandler TitleScene::onResolveCCBCCMenuItemSelector(Object * pTarget, const char* pSelectorName) {

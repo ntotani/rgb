@@ -75,7 +75,7 @@
 		C62BD6AC18C8740C00F1CC34 /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C62BD6A918C8740C00F1CC34 /* TitleScene.cpp */; };
 		C62BD71C18C87DF600F1CC34 /* clickme-down.png in Resources */ = {isa = PBXBuildFile; fileRef = C62BD71A18C87DF600F1CC34 /* clickme-down.png */; };
 		C62BD71D18C87DF600F1CC34 /* clickme.png in Resources */ = {isa = PBXBuildFile; fileRef = C62BD71B18C87DF600F1CC34 /* clickme.png */; };
-		C62BD72118C88B4300F1CC34 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = C62BD72018C88B4300F1CC34 /* MainScene.ccbi */; };
+		C62BD72B18C8C05E00F1CC34 /* TitleScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = C62BD72A18C8C05A00F1CC34 /* TitleScene.ccbi */; };
 		C6F63F9618C5CEA000E1863E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61BFB3218C5C6AC00E127FD /* XCTest.framework */; };
 		C6F63F9718C5CEA000E1863E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		C6F63F9818C5CEA000E1863E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -336,7 +336,7 @@
 		C62BD6AA18C8740C00F1CC34 /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		C62BD71A18C87DF600F1CC34 /* clickme-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clickme-down.png"; sourceTree = "<group>"; };
 		C62BD71B18C87DF600F1CC34 /* clickme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clickme.png; sourceTree = "<group>"; };
-		C62BD72018C88B4300F1CC34 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
+		C62BD72A18C8C05A00F1CC34 /* TitleScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = TitleScene.ccbi; sourceTree = "<group>"; };
 		C6F63F9518C5CEA000E1863E /* rgbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rgbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F63F9B18C5CEA000E1863E /* rgbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rgbTests-Info.plist"; sourceTree = "<group>"; };
 		C6F63F9D18C5CEA000E1863E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -556,8 +556,8 @@
 				C62BD71A18C87DF600F1CC34 /* clickme-down.png */,
 				C62BD71B18C87DF600F1CC34 /* clickme.png */,
 				C61BFB2418C5C0D900E127FD /* green.png */,
-				C62BD72018C88B4300F1CC34 /* MainScene.ccbi */,
 				C61BFB2518C5C0D900E127FD /* red.png */,
+				C62BD72A18C8C05A00F1CC34 /* TitleScene.ccbi */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -873,7 +873,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62BD72118C88B4300F1CC34 /* MainScene.ccbi in Resources */,
+				C62BD72B18C8C05E00F1CC34 /* TitleScene.ccbi in Resources */,
 				C61BFB2718C5C0D900E127FD /* green.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
