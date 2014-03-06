@@ -15,9 +15,12 @@
 #include "FieldModel.h"
 #include "IFieldListener.h"
 
+#define TIME_LIMIT 10
+
 class GameScene : public cocos2d::Layer, IFieldListener
 {
     FieldModel* field;
+    cocos2d::LabelTTF* timerLabel;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

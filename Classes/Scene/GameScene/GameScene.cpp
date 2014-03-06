@@ -36,8 +36,12 @@ bool GameScene::init()
     }
     Size visibleSize = Director::getInstance()->getVisibleSize();
     //Point origin = Director::getInstance()->getVisibleOrigin();
-    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, 10);
+    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, TIME_LIMIT);
     field->addListener(this);
+
+    timerLabel = LabelTTF::create(Value(TIME_LIMIT).asString(), "Arial", 48.0f);
+    timerLabel->setPosition(visibleSize.width / 2, visibleSize.height - timerLabel->getContentSize().height / 2);
+    addChild(timerLabel);
 
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     auto listener = EventListenerTouchOneByOne::create();
@@ -76,7 +80,7 @@ void GameScene::onBallCreate(BallModel *ball) {
 }
 
 void GameScene::onRestTimeUpdate(float percent) {
-    //
+    timerLabel->setString(Value((int)(TIME_LIMIT * percent)).asString());
 }
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {
