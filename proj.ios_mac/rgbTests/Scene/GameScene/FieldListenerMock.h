@@ -16,9 +16,11 @@ public:
     bool called;
     BallModel* createdBall;
     float percent;
+    int score;
     FieldListenerMock();
     virtual void onBallCreate(BallModel* ball);
     virtual void onRestTimeUpdate(float percent);
+    virtual void onScore(int score);
 };
 
 #endif /* defined(__rgb__FieldListenerMock__) */

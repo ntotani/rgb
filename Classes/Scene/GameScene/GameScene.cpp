@@ -90,6 +90,10 @@ void GameScene::onRestTimeUpdate(float percent) {
     timerLabel->setString(StringUtils::format("TIME:%.1f", TIME_LIMIT * percent));
 }
 
+void GameScene::onScore(int score) {
+    //
+}
+
 void GameScene::onTouchEnded(Touch* touch, Event* event) {
     Point p = touch->getLocation();
     //log("%f, %f", p.x, p.y);

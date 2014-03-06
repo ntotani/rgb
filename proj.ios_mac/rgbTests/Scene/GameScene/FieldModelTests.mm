@@ -106,4 +106,28 @@
     XCTAssertEqual(0.7f, listener->percent);
 }
 
+- (void)testScore
+{
+    IRandom* rnd = new RandomMock({0, 0, 0, 1, 0, 2});
+    FieldModel* field = new FieldModel(640, 480, 1, 32, -32, 1000, rnd);
+    FieldListenerMock* listener = new FieldListenerMock();
+    field->addListener(listener);
+    field->update(1); // spawn red ball
+    field->update(1); // spawn green ball
+    field->update(1); // spawn blue ball
+    field->update(1); // push all ball in field
+    XCTAssertEqual(4, (int)field->getBalls().size());
+    XCTAssertEqual(16.0f, field->getBalls()[0]->getX());
+    XCTAssertEqual(400.0f, field->getBalls()[0]->getY());
+    field->touch(16, 400);
+    XCTAssertEqual(3, (int)field->getBalls().size());
+    XCTAssertEqual(0, listener->score);
+    field->touch(16, 432);
+    XCTAssertEqual(2, (int)field->getBalls().size());
+    XCTAssertEqual(0, listener->score);
+    field->touch(16, 464);
+    XCTAssertEqual(1, (int)field->getBalls().size());
+    XCTAssertEqual(1, listener->score);
+}
+
 @end

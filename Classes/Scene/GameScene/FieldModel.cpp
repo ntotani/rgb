@@ -8,7 +8,19 @@
 
 #include "FieldModel.h"
 
-FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random):spawnTimer(0),wid(wid),hei(hei),spawnSpan(spawnSpan),ballLen(ballLen),ballDy(ballDy),timeLimit(timeLimit),restTime(timeLimit),random(random) {
+FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random):
+spawnTimer(0),
+wid(wid),
+hei(hei),
+spawnSpan(spawnSpan),
+ballLen(ballLen),
+ballDy(ballDy),
+timeLimit(timeLimit),
+restTime(timeLimit),
+random(random),
+score(0),
+currentTarget(BallColor::RED)
+{
 }
 
 vector<BallModel*> FieldModel::getBalls() {
@@ -54,9 +66,19 @@ void FieldModel::touch(float x, float y) {
     auto it = balls.begin();
     while (it != balls.end()) {
         BallModel* ball = *it;
-        if (ball->intersect(x, y)) {
+        if (ball->intersect(x, y) && ball->getColor() == currentTarget) {
             it = balls.erase(it);
             ball->deleteFromField();
+            switch(currentTarget) {
+                case RED: currentTarget = GREEN; break;
+                case GREEN: currentTarget = BLUE; break;
+                case BLUE:
+                    currentTarget = RED;
+                    score++;
+                    for (auto jt = this->listeners.begin(); jt != this->listeners.end(); jt++) {
+                        (*jt)->onScore(score);
+                    }
+            }
         } else {
             it++;
         }

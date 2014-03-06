@@ -28,6 +28,8 @@ class FieldModel {
     float restTime;
     float timeLimit;
     IRandom* random;
+    int score;
+    BallColor currentTarget;
 public:
     FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random);
     vector<BallModel*> getBalls();
