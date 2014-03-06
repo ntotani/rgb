@@ -3,4 +3,4 @@ before_install:
     - brew update
     - brew unlink xctool
     - brew install xctool
-script: xctool -project proj.ios_mac/rgb.xcodeproj -scheme rgb\ iOS -sdk iphonesimulator build test -freshInstall
+script: xctool -project proj.ios_mac/rgb.xcodeproj -scheme rgb\ iOS -sdk iphonesimulator build test
