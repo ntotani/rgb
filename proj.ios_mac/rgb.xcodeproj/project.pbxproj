@@ -57,6 +57,8 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		C60AA26E18C8E4D60092F472 /* GameScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = C60AA26D18C8E4D60092F472 /* GameScene.ccbi */; };
+		C60AA29218C99B0B0092F472 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = C60AA29118C99B0B0092F472 /* ccbResources */; };
 		C61BFB2018C5BC1F00E127FD /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */; };
 		C61BFB2218C5BE1300E127FD /* chara1.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2118C5BE1300E127FD /* chara1.png */; };
 		C61BFB2618C5C0D900E127FD /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C61BFB2318C5C0D900E127FD /* blue.png */; };
@@ -309,6 +311,8 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C60AA26D18C8E4D60092F472 /* GameScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = GameScene.ccbi; path = "../cocosbuilder/Published-iOS/GameScene.ccbi"; sourceTree = "<group>"; };
+		C60AA29118C99B0B0092F472 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
 		C61BFB1E18C5BC1F00E127FD /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		C61BFB1F18C5BC1F00E127FD /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		C61BFB2118C5BE1300E127FD /* chara1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara1.png; sourceTree = "<group>"; };
@@ -552,9 +556,11 @@
 			isa = PBXGroup;
 			children = (
 				C61BFB2318C5C0D900E127FD /* blue.png */,
+				C60AA29118C99B0B0092F472 /* ccbResources */,
 				C61BFB2118C5BE1300E127FD /* chara1.png */,
 				C62BD71A18C87DF600F1CC34 /* clickme-down.png */,
 				C62BD71B18C87DF600F1CC34 /* clickme.png */,
+				C60AA26D18C8E4D60092F472 /* GameScene.ccbi */,
 				C61BFB2418C5C0D900E127FD /* green.png */,
 				C61BFB2518C5C0D900E127FD /* red.png */,
 				C62BD72A18C8C05A00F1CC34 /* TitleScene.ccbi */,
@@ -882,10 +888,12 @@
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				C61BFB2218C5BE1300E127FD /* chara1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
+				C60AA29218C99B0B0092F472 /* ccbResources in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				C62BD71D18C87DF600F1CC34 /* clickme.png in Resources */,
+				C60AA26E18C8E4D60092F472 /* GameScene.ccbi in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				C61BFB2618C5C0D900E127FD /* blue.png in Resources */,

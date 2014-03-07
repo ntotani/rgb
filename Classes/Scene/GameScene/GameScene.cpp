@@ -6,19 +6,27 @@
 //
 //
 
+#include "cocosbuilder/CCNodeLoaderLibrary.h"
 #include "GameScene.h"
 #include "../../Common/RandomImpl.h"
+#include "../TitleScene/TitleScene.h"
 
 USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace cocosbuilder;
 
 Scene* GameScene::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = GameScene::create();
-    
+
+    NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();
+    nodeLoaderLibrary->registerNodeLoader("GameScene", GameSceneLoader::loader());
+    CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
+    ccbReader->autorelease();
+    Node* layer = ccbReader->readNodeGraphFromFile("GameScene.ccbi");
+    static_cast<GameScene*>(layer)->setAnimationManager(ccbReader->getAnimationManager());
+
     // add layer as a child to scene
     scene->addChild(layer);
     
@@ -36,19 +44,8 @@ bool GameScene::init()
         return false;
     }
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    //Point origin = Director::getInstance()->getVisibleOrigin();
-    field = new FieldModel(visibleSize.width, visibleSize.height, 3, 32, -100, TIME_LIMIT, new RandomImpl());
+    field = new FieldModel(visibleSize.width, visibleSize.height, 1, 32, -100, TIME_LIMIT, new RandomImpl());
     field->addListener(this);
-
-    timerLabel = LabelTTF::create(StringUtils::format("TIME:%d.0", TIME_LIMIT), "Arial", 48.0f);
-    Size timerSize = timerLabel->getContentSize();
-    timerLabel->setPosition(visibleSize.width - timerSize.width / 2, visibleSize.height - timerSize.height / 2);
-    addChild(timerLabel);
-
-    scoreLabel = LabelTTF::create("SCORE:0", "Arial", 48);
-    Size scoreSize = scoreLabel->getContentSize();
-    scoreLabel->setPosition(scoreSize.width / 2, visibleSize.height - scoreSize.height / 2);
-    addChild(scoreLabel);
 
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     auto listener = EventListenerTouchOneByOne::create();
@@ -58,7 +55,6 @@ bool GameScene::init()
     listener->onTouchCancelled = [](Touch* touch, Event* event) {};
     dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
-    scheduleUpdate();
     return true;
 }
 
@@ -82,12 +78,18 @@ void GameScene::onBallCreate(BallModel *ball) {
             break;
     }
     sprite->setPosition(Point(ball->getX(), ball->getY()));
-    addChild(sprite);
-    ball->addListener(new BallListenerImpl(sprite, this));
+    balls->addChild(sprite);
+    ball->addListener(new BallListenerImpl(sprite, balls));
 }
 
 void GameScene::onRestTimeUpdate(float percent) {
-    timerLabel->setString(StringUtils::format("TIME:%.1f", TIME_LIMIT * percent));
+    if (percent > 0) {
+        timerLabel->setString(StringUtils::format("TIME:%.1f", TIME_LIMIT * percent));
+    } else {
+        timerLabel->setString("TIME:0");
+        animationManager->runAnimationsForSequenceNamed("timeup");
+        unscheduleUpdate();
+    }
 }
 
 void GameScene::onScore(int score) {
@@ -96,11 +98,58 @@ void GameScene::onScore(int score) {
 
 void GameScene::onTouchEnded(Touch* touch, Event* event) {
     Point p = touch->getLocation();
-    //log("%f, %f", p.x, p.y);
     field->touch(p.x, p.y);
 }
 
-BallListenerImpl::BallListenerImpl(cocos2d::Sprite* sprite, GameScene* parent):sprite(sprite),parent(parent) {
+SEL_MenuHandler GameScene::onResolveCCBCCMenuItemSelector(Object * pTarget, const char* pSelectorName) {
+    return NULL;
+}
+
+SEL_CallFuncN GameScene::onResolveCCBCCCallFuncSelector(Object * pTarget, const char* pSelectorName) {
+    CCB_SELECTORRESOLVER_CALLFUNC_GLUE(this, "onCountDownOne", GameScene:: onCountDownOne);
+    CCB_SELECTORRESOLVER_CALLFUNC_GLUE(this, "onCountDownTwo", GameScene:: onCountDownTwo);
+    return NULL;
+}
+
+Control::Handler GameScene::onResolveCCBCCControlSelector(Object * pTarget, const char* pSelectorName) {
+    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onTimeupOk", GameScene::onTimeupOk);
+    return NULL;
+}
+
+bool GameScene::onAssignCCBMemberVariable(Object* pTarget, const char* pMemberVariableName, Node* pNode) {
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "balls", Node*, balls);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "countDown", LabelTTF*, countDown);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "score", LabelTTF*, scoreLabel);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "time", LabelTTF*, timerLabel);
+    return true;
+}
+
+void GameScene::completedAnimationSequenceNamed(const char *name) {
+    if (strcmp(name, "countDown") == 0) {
+        scheduleUpdate();
+    }
+}
+
+void GameScene::setAnimationManager(CCBAnimationManager* animationManager) {
+    CC_SAFE_RELEASE_NULL(this->animationManager);
+    this->animationManager = animationManager;
+    CC_SAFE_RETAIN(this->animationManager);
+    this->animationManager->setDelegate(this);
+}
+
+void GameScene::onCountDownOne(Node* node) {
+    countDown->setString("1");
+}
+
+void GameScene::onCountDownTwo(Node* node) {
+    countDown->setString("2");
+}
+
+void GameScene::onTimeupOk(Object* sender, Control::EventType type) {
+    Director::getInstance()->replaceScene(TransitionFade::create(1.0f, TitleScene::createScene()));
+}
+
+BallListenerImpl::BallListenerImpl(Sprite* sprite, Node* parent):sprite(sprite),parent(parent) {
 }
 
 void BallListenerImpl::onBallMove(float x, float y) {
