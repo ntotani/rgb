@@ -22,7 +22,7 @@ class FieldModel {
     float spawnTimer;
     float wid;
     float hei;
-    int spawnSpan;
+    float spawnSpan;
     float ballLen;
     float ballDy;
     float restTime;
@@ -31,7 +31,7 @@ class FieldModel {
     int score;
     BallColor currentTarget;
 public:
-    FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random);
+    FieldModel(float wid, float hei, float spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random);
     vector<BallModel*> getBalls();
     void addListener(IFieldListener* listener);
     void update(float tick);

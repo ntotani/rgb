@@ -8,7 +8,7 @@
 
 #include "FieldModel.h"
 
-FieldModel::FieldModel(float wid, float hei, int spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random):
+FieldModel::FieldModel(float wid, float hei, float spawnSpan, float ballLen, float ballDy, float timeLimit, IRandom* random):
 spawnTimer(0),
 wid(wid),
 hei(hei),

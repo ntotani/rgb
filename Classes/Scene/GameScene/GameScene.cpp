@@ -44,7 +44,7 @@ bool GameScene::init()
         return false;
     }
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    field = new FieldModel(visibleSize.width, visibleSize.height, 1, 32, -100, TIME_LIMIT, new RandomImpl());
+    field = new FieldModel(visibleSize.width, visibleSize.height, 0.5, 64, -200, TIME_LIMIT, new RandomImpl());
     field->addListener(this);
 
     auto dispatcher = Director::getInstance()->getEventDispatcher();
